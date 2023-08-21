@@ -27,16 +27,75 @@
       crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-      const ctx = document.getElementById("myChart");
+      const myChart = document.getElementById("myChart").getContext("2d");
 
-      new Chart(ctx, {
+      const chart = new Chart(myChart, {
         type: "bar",
         data: {
           labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
           datasets: [
             {
               label: "# of Votes",
-              data: [12, 19, 3, 5, 2, 3],
+              data: [1, 5, 10, 20, 30, 40],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)", // Merah
+                "rgba(54, 162, 235, 0.2)", // Biru
+                "rgba(255, 205, 86, 0.2)", // Kuning
+                "rgba(75, 192, 192, 0.2)", // Hijau
+                "rgba(153, 102, 255, 0.2)", // Ungu
+                "rgba(255, 159, 64, 0.2)", // Orange
+              ],
+              borderColor: [
+                "rgb(255, 99, 132)", // Merah
+                "rgb(54, 162, 235)", // Biru
+                "rgb(255, 205, 86)", // Kuning
+                "rgb(75, 192, 192)", // Hijau
+                "rgb(153, 102, 255)", // Ungu
+                "rgb(255, 159, 64)", // Orange
+              ],
+              borderWidth: 1,
+            },
+            {
+              label: "People",
+              data: [45, 50, 60, 70, 80, 90],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)", // Merah
+                "rgba(54, 162, 235, 0.2)", // Biru
+                "rgba(255, 205, 86, 0.2)", // Kuning
+                "rgba(75, 192, 192, 0.2)", // Hijau
+                "rgba(153, 102, 255, 0.2)", // Ungu
+                "rgba(255, 159, 64, 0.2)", // Orange
+              ],
+              borderColor: [
+                "rgb(255, 99, 132)", // Merah
+                "rgb(54, 162, 235)", // Biru
+                "rgb(255, 205, 86)", // Kuning
+                "rgb(75, 192, 192)", // Hijau
+                "rgb(153, 102, 255)", // Ungu
+                "rgb(255, 159, 64)", // Orange
+              ],
+              borderWidth: 1,
+            },
+            {
+              label: "# of Votes",
+              data: [100, 120, 130, 140, 150, 160],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)", // Merah
+                "rgba(54, 162, 235, 0.2)", // Biru
+                "rgba(255, 205, 86, 0.2)", // Kuning
+                "rgba(75, 192, 192, 0.2)", // Hijau
+                "rgba(153, 102, 255, 0.2)", // Ungu
+                "rgba(255, 159, 64, 0.2)", // Orange
+              ],
+
+              borderColor: [
+                "rgb(255, 99, 132)", // Merah
+                "rgb(54, 162, 235)", // Biru
+                "rgb(255, 205, 86)", // Kuning
+                "rgb(75, 192, 192)", // Hijau
+                "rgb(153, 102, 255)", // Ungu
+                "rgb(255, 159, 64)", // Orannge
+              ],
               borderWidth: 1,
             },
           ],
@@ -49,6 +108,27 @@
           },
         },
       });
+
+      var abc = chart.data.datasets[0].label;
+      const bordersize = chart.data.datasets[0].borderWidth;
+      const borderColor = chart.data.datasets[0].borderColor;
+      const bordergreen = chart.data.datasets[0].borderColor[1];
+      console.log(abc);
+      console.log(bordersize);
+      console.log(borderColor);
+      console.log(bordergreen);
+
+      // Purple
+      const purple = chart.data.labels[4]; // Index 4 corresponds to "Purple" label
+      console.log(purple);
+
+      // Blue
+      const bluecolor = chart.data.datasets[0].backgroundColor[1]; // Index 1 corresponds to "Blue" color
+      console.log(bluecolor);
+
+      // Number 20 From Data
+      const num20 = chart.data.datasets[0].data[3];
+      console.log(num20);
     </script>
   </body>
 </html>
